@@ -1,0 +1,96 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+
+
+# Docker
+.Dockerfile
+.dockerignore
+
+# Environment
+.env
+
+# Flutter/Dart/Pub related
+**/doc/api/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+/build/
+.last_build_id
+*/build/
+
+
+# Web related
+lib/generated_plugin_registrant.dart
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Widget golden test failures
+**/failures/*.png
+
+# Exceptions to above rules.
+!/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
+signaling_server/node_modules
+*.g.dart
+*.gen.dart
+*.freezed.dart
+app_component.config.dart
+router.gr.dart
+lib/generated
+.fvm
+!**/.fvm/fvm_config.json
+
+report.xml
+
+##### INTELLIJ
+
+# User-specific stuff
+**/.idea/**/workspace.xml
+**/.idea/**/tasks.xml
+**/.idea/**/usage.statistics.xml
+**/.idea/**/dictionaries
+**/.idea/**/shelf
+
+
+# Generated files
+.idea/**/contentModel.xml
+
+# Sensitive or high-churn files
+**/.idea/**/dataSources/
+**/.idea/**/dataSources.ids
+**/.idea/**/dataSources.local.xml
+**/.idea/**/sqlDataSources.xml
+**/.idea/**/dynamic.xml
+**/.idea/**/uiDesigner.xml
+**/.idea/**/dbnavigator.xml
+
+# Gradle
+**/.idea/**/gradle.xml
+**/.idea/**/libraries
+
+
+# auto-import.
+**/.idea/artifacts
+**/.idea/compiler.xml
+**/.idea/jarRepositories.xml
+**/.idea/modules.xml
+**/.idea/*.iml
+**/.idea/modules
+**/*.iml
+**/*.ipr
+**/misc.xml
+starport_template/ios/build
