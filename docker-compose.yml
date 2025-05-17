@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  backend:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: smart-meeting-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/:/app
+      - uploads:/app/uploads
+    env_file:
+      - ./backend/.env
+    restart: unless-stopped
+    networks:
+      - smart-meeting-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: smart-meeting-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - smart-meeting-network
+
+  # Uncomment to enable database (PostgreSQL)
+  # db:
+  #   image: postgres:13
+  #   container_name: smart-meeting-db
+  #   environment:
+  #     POSTGRES_USER: ${DB_USER:-postgres}
+  #     POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres}
+  #     POSTGRES_DB: ${DB_NAME:-smart_meeting}
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data/
+  #   ports:
+  #     - "5432:5432"
+  #   networks:
+  #     - smart-meeting-network
+
+networks:
+  smart-meeting-network:
+    driver: bridge
+
+volumes:
+  uploads:
+  # Uncomment when enabling PostgreSQL
+  # postgres_data:
