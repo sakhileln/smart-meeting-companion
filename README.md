@@ -118,4 +118,6 @@ kubectl apply -f k8s/
 * Voice assistant integration
 
 ## 🤝 Contact
-- © 2025 Sakhile
+- Sakhile III  
+- [LinkedIn Profile](https://www.linkedin.com/in/sakhile-)
+- [GitHub Profile](https://github.com/sakhileln)
