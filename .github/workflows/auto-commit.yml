@@ -1,0 +1,38 @@
+name: Auto Commit Contribution
+
+# Schedule the workflow to run daily at midnight UTC
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  # Also allow manual triggering via the GitHub Actions tab:
+  workflow_dispatch:
+
+jobs:
+  auto-commit:
+    runs-on: ubuntu-latest
+    steps:
+      # Check out the repository
+      - uses: actions/checkout@v3
+
+      # Step: Append current timestamp to a file (or you can modify any file)
+      - name: Append Timestamp
+        run: |
+          echo "Commit at: $(date)" >> contributions.log
+
+      # Step: Set up Git config for committing
+      - name: Configure Git
+        run: |
+          git config --global user.name "Sakhile L. Ndlazi"
+          git config --global user.email "sakhilelindah@gmail.com"
+
+      # Step: Commit changes
+      - name: Commit Changes
+        run: |
+          git add contributions.log
+          git commit -m "Automated contribution update: $(date)" || echo "No changes to commit"
+
+      # Step: Push changes to the repository
+      - name: Push Changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
