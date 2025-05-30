@@ -5,6 +5,7 @@ An AI-powered mobile app that helps users turn meeting audio into actionable ins
 **Smart Meeting Companion** is a full-stack application with a Flutter frontend and a FastAPI backend. It uses AI models to transcribe meeting audio and extract meaningful insights like summaries, decisions, and action points.
 
 ## 🚀 Features
+
 * 🎹 Upload or record meeting audio
 * ✍️ Automatic transcription using Whisper
 * 🧠 Summarization and action item extraction via AI
