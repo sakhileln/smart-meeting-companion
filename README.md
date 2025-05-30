@@ -85,6 +85,7 @@ docker-compose up --build
 ```
 
 ## 🔐 Security
+
 * Passwords stored with `bcrypt` (via `passlib`)
 * JWT-based login system
 * API protected with role-based access control
