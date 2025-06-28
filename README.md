@@ -1,5 +1,4 @@
 # 🧠 Smart Meeting Companion
-
 AI-powered mobile app that helps users turn meeting audio into actionable insights. Upload or record meetings, get automated transcripts, summaries, and key action items—all in one place.
 
 ## 📌 Overview
